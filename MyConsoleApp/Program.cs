@@ -25,4 +25,12 @@ if (string.IsNullOrWhiteSpace(name))
     name = "незнакомец";
 }
 
-Console.WriteLine($"Привет, {name}! Всё работает.");
+string timeGreeting = DateTime.Now.Hour switch
+{
+    >= 5 and < 12 => "Доброе утро",
+    >= 12 and < 18 => "Добрый день",
+    >= 18 and < 23 => "Добрый вечер",
+    _ => "Доброй ночи"
+};
+
+Console.WriteLine($"{timeGreeting}, {name}! Всё работает.");
