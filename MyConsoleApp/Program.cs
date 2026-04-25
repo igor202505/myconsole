@@ -1,3 +1,14 @@
+if (args.Length > 0 && (args[0] == "--help" || args[0] == "-h"))
+{
+    Console.WriteLine("MyConsoleApp — простое консольное приложение.");
+    Console.WriteLine();
+    Console.WriteLine("Использование:");
+    Console.WriteLine("  dotnet run --project MyConsoleApp                    — интерактивный режим");
+    Console.WriteLine("  dotnet run --project MyConsoleApp -- <имя>           — вывести приветствие для <имя>");
+    Console.WriteLine("  dotnet run --project MyConsoleApp -- --help | -h     — показать эту справку");
+    return;
+}
+
 Console.WriteLine("Hello from MyConsoleApp!");
 Console.WriteLine($"Running on .NET {Environment.Version} ({Environment.OSVersion}).");
 Console.WriteLine($"Текущее время: {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
